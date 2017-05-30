@@ -3,3 +3,131 @@
 // Bourbon and Neat
 @import "node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "node_modules/bourbon-neat/core/neat";
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,300i,400,400i,600,600i,700,700i,900,900i');
+
+$blue: #273d90;
+$blue-light: #eef1fa;
+$red: #cb2434;
+
+body {
+  background-color: $blue-light;
+  color: $blue;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $blue;
+  color: white;
+  padding: 0.5em 1em;
+
+  h1 {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 900;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .dates {
+    display: inline-block;
+    font-size: 0.9375em;
+    font-weight: 600;
+
+  }
+}
+
+.hero {
+  height: 500px;
+  display: flex;
+  align-items: stretch;
+  font-size: 1.5em;
+  &__block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2em;
+
+    h1 {
+      font-size: 3em;
+      font-weight: 900;
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+.email {
+  padding: 4em 2em;
+  background-color: white;
+  @include clearfix;
+
+  h2 {
+    font-weight: 900;
+    text-align: center;
+  }
+  .signup {
+    width: 300px;
+    margin: 0 auto;
+  }
+  label {
+    width: 100%;
+    clear: both;
+    box-sizing: border-box;
+    display: block;
+    margin: 2em 0 1em 0;
+    padding: 1em;
+    border: 2px solid $blue;
+
+    span {
+      display: block;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5em 0.25em;
+      border: 0;
+      color: $blue;
+      &:focus {
+        background: $blue-light;
+        outline: none;
+      }
+    }
+  }
+  button {
+    float: right;
+    background: $blue;
+    padding: 1em;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+  }
+}
+
+.location {
+  padding: 4em 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+footer {
+  padding: 2em;
+  background-color: $blue;
+  color: white;
+  text-align: center;
+  font-size: 0.75em;
+}
