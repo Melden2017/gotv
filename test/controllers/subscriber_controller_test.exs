@@ -10,4 +10,9 @@ defmodule Gotv.SubscriberControllerTest do
     assert redirected_to(conn) == page_path(conn, :index)
     assert Repo.get_by(Subscriber, @valid_attrs)
   end
+
+  test "does not create resource and renders errors when data is invalid", %{conn: conn} do
+    conn = post conn, subscriber_path(conn, :create), subscriber: %{email_address: ""}
+    assert html_response(conn, 200) =~ "Oops, something went wrong!"
+  end
 end
