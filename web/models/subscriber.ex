@@ -16,5 +16,6 @@ defmodule Gotv.Subscriber do
     struct
     |> cast(params, [:first_name, :last_name, :email_address])
     |> validate_required([:email_address])
+    |> validate_format(:email_address, ~r/@[a-z\d\-.]+\.[a-z]+\z/i)
   end
 end

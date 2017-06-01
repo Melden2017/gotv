@@ -18,4 +18,12 @@ defmodule Gotv.SubscriberTest do
     assert changeset.errors[:email_address] ==
       {"can't be blank", [validation: :required]}
   end
+
+  test "email address format must be valid" do
+    changeset = Subscriber.changeset(%Subscriber{}, %{email_address: "jimmy@test"})
+
+    refute changeset.valid?
+    assert changeset.errors[:email_address] ==
+      {"has invalid format", [validation: :format]}
+  end
 end
