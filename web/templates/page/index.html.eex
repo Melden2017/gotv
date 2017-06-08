@@ -20,7 +20,7 @@
 
       <label>
         <span>Email:</span>
-        <%= text_input f, :email_address, type: "email", placeholder="you@yours.com" %>
+        <%= text_input f, :email_address, type: "email", placeholder: "you@yours.com" %>
         <%= error_tag f, :email_address %>
       </label>
       <button type="submit">Sign up!</button>
