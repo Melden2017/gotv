@@ -3,6 +3,6 @@ defmodule Gotv.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Get out the vote!"
+    assert html_response(conn, 200) =~ "Your voice matters"
   end
 end

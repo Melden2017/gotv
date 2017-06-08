@@ -1,19 +1,34 @@
-<h2>Get out the vote!</h2>
-
-<%= form_for @changeset, subscriber_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= label f, :email_address, class: "control-label" %>
-    <%= text_input f, :email_address, type: "email", class: "form-control" %>
-    <%= error_tag f, :email_address %>
+<section class="hero">
+  <div class="hero__block">
+    <h1>Your voice matters…<br>Vote!</h1>
   </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+  <div class="hero__block">
+    <p>Not registered to vote?<br><a href="https://olvr.sos.state.oh.us/">Register here!</a></p>
+    <p>Recently moved or unsure of registration?<br><a href="https://olvr.sos.state.oh.us/">Update your registration here!</a></p>
   </div>
-<% end %>
+</section>
+
+<section class="email">
+  <h2>Sign up to receive voting reminders and a link to help find your polling location!</h2>
+  <div class="signup">
+    <%= form_for @changeset, subscriber_path(@conn, :create), fn f -> %>
+      <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+
+      <label>
+        <span>Email:</span>
+        <%= text_input f, :email_address, type: "email", placeholder: "you@yours.com" %>
+        <%= error_tag f, :email_address %>
+      </label>
+      <button type="submit">Sign up!</button>
+    <% end %>
+  </div>
+</section>
+
+<section class="location">
+  <h2>Do you know where you vote?</h2>
+  <p>To find your polling location go <a href="https://lucas.oh-vote.org/VoterView/PollingPlaceSearch.do">here.</a></p>
+</section>
