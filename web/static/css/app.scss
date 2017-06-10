@@ -19,15 +19,30 @@ a {
   color: inherit;
 }
 
+.alert {
+  margin: 0;
+  padding: 1em;
+
+  &-info {
+    background-color: $blue-light;
+  }
+  &-danger {
+    background-color: lighten($red, 40%);
+    color: darken($red, 25%);
+  }
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $blue;
+  border-bottom: 10px solid $red;
   color: white;
   padding: 0.5em 1em;
 
   h1 {
+    width: 375px;
     display: inline-block;
     font-size: 1.5em;
     font-weight: 900;
@@ -43,13 +58,28 @@ header {
     font-weight: 600;
 
   }
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    h1 {
+      width: 100%;
+    }
+    .dates {
+      width: 100%;
+    }
+    
+  }
 }
 
 .hero {
   height: 500px;
   display: flex;
   align-items: stretch;
+  background-image: url('/images/header-bg-blue-gradient.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
   font-size: 1.5em;
+  color: white;
   &__block {
     width: 50%;
     display: flex;
@@ -59,6 +89,7 @@ header {
     padding: 2em;
 
     h1 {
+      color: white;
       font-size: 3em;
       font-weight: 900;
     }
@@ -67,11 +98,26 @@ header {
       font-weight: 700;
     }
   }
+  @media only screen and (max-width: 768px) {
+    height: auto;
+    flex-wrap: wrap;
+    &__block {
+      width: 100%;
+      padding: 0 1em;
+      h1 {
+        font-size: 2em;
+      }
+    }
+  }
 }
 
 .email {
-  padding: 4em 2em;
+  padding: 12% 2em;
   background-color: white;
+  background-image: url('/images/top-tri.svg'), url('/images/bottom-tri.svg');
+  background-size: 150%;
+  background-position: center top, center bottom;
+  background-repeat: no-repeat;
   @include clearfix;
 
   h2 {
@@ -126,7 +172,7 @@ header {
 
 footer {
   padding: 2em;
-  background-color: $blue;
+  background-color: $red;
   color: white;
   text-align: center;
   font-size: 0.75em;

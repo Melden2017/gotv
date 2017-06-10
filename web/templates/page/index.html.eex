@@ -3,8 +3,8 @@
     <h1>Your voice matters…<br>Vote!</h1>
   </div>
   <div class="hero__block">
-    <p>Not registered to vote?<br><a href="https://olvr.sos.state.oh.us/">Register here!</a></p>
-    <p>Recently moved or unsure of registration?<br><a href="https://olvr.sos.state.oh.us/">Update your registration here!</a></p>
+    <p>Not registered to vote?<br><a href="https://olvr.sos.state.oh.us/" target="_blank">Register here!</a></p>
+    <p>Recently moved or unsure of registration?<br><a href="https://olvr.sos.state.oh.us/" target="_blank">Update your registration here!</a></p>
   </div>
 </section>
 
@@ -30,5 +30,5 @@
 
 <section class="location">
   <h2>Do you know where you vote?</h2>
-  <p>To find your polling location go <a href="https://lucas.oh-vote.org/VoterView/PollingPlaceSearch.do">here.</a></p>
+  <p>To find your polling location go <a href="https://lucas.oh-vote.org/VoterView/PollingPlaceSearch.do" target="_blank">here.</a></p>
 </section>

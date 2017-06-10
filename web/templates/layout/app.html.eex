@@ -4,28 +4,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Toledo’s Election Dates: Primary Election - September 12th | General Election - November 7th">
 
-    <title>Get Out the Vote | GOTV</title>
+    <title>Toledo Get Out the Vote | GOTV</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-100785822-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </head>
 
   <body>
     <header>
-      <h1>toledoGO.TV <span>|</span> Get Out The Vote</h1>
-      <div class='dates'>Toledo’s Election Dates: Primary Election - September 12th | General Election - November 7th</div>
+      <h1>toledoGO.TV <span>|</span> Get&nbsp;Out&nbsp;The&nbsp;Vote</h1>
+      <div class='dates'>Toledo’s Election Dates: Primary&nbsp;Election&nbsp;-&nbsp;September&nbsp;12th <span>|</span> General&nbsp;Election&nbsp;-&nbsp;November&nbsp;7th</div>
     </header>
 
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <%= if get_flash(@conn, :info) do %>
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <% end %>
+    <%= if get_flash(@conn, :error) do %>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <% end %>
 
     <main role="main">
       <%= render @view_module, @view_template, assigns %>
     </main>
 
     <footer>
-      <p>Paid for by Friends of <a href="https://www.sammelden.com/">Sam Melden</a></p>
+      <p>Paid for by Friends of Sam Melden</p>
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
