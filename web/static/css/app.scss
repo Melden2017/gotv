@@ -19,8 +19,17 @@ a {
   color: inherit;
 }
 
-p.alert {
+.alert {
   margin: 0;
+  padding: 1em;
+
+  &-info {
+    background-color: $blue-light;
+  }
+  &-danger {
+    background-color: lighten($red, 40%);
+    color: darken($red, 25%);
+  }
 }
 
 header {
@@ -33,6 +42,7 @@ header {
   padding: 0.5em 1em;
 
   h1 {
+    width: 375px;
     display: inline-block;
     font-size: 1.5em;
     font-weight: 900;
@@ -47,6 +57,16 @@ header {
     font-size: 0.9375em;
     font-weight: 600;
 
+  }
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    h1 {
+      width: 100%;
+    }
+    .dates {
+      width: 100%;
+    }
+    
   }
 }
 
@@ -76,6 +96,17 @@ header {
 
     a {
       font-weight: 700;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    height: auto;
+    flex-wrap: wrap;
+    &__block {
+      width: 100%;
+      padding: 0 1em;
+      h1 {
+        font-size: 2em;
+      }
     }
   }
 }

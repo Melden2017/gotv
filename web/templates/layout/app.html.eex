@@ -23,12 +23,16 @@
 
   <body>
     <header>
-      <h1>toledoGO.TV <span>|</span> Get Out The Vote</h1>
-      <div class='dates'>Toledo’s Election Dates: Primary Election - September 12th | General Election - November 7th</div>
+      <h1>toledoGO.TV <span>|</span> Get&nbsp;Out&nbsp;The&nbsp;Vote</h1>
+      <div class='dates'>Toledo’s Election Dates: Primary&nbsp;Election&nbsp;-&nbsp;September&nbsp;12th <span>|</span> General&nbsp;Election&nbsp;-&nbsp;November&nbsp;7th</div>
     </header>
 
-    <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <%= if get_flash(@conn, :info) do %>
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+    <% end %>
+    <%= if get_flash(@conn, :error) do %>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <% end %>
 
     <main role="main">
       <%= render @view_module, @view_template, assigns %>
