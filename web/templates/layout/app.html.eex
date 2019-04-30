@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ohio State-Wide Election Dates: Primary Election - May 8th  | General Election - November 6th">
+    <meta name="description" content="Municipal Election Dates: Primary Election - September 10th  | General Election - November 5th">
 
     <title>Toledo Get Out the Vote | GOTV</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -24,7 +24,7 @@
   <body>
     <header>
       <h1>toledoGO.TV <span>|</span> Get&nbsp;Out&nbsp;The&nbsp;Vote</h1>
-      <div class='dates'>Ohio State-Wide Election Dates: Primary&nbsp;Election&nbsp;-&nbsp;May&nbsp;8th <span>|</span> General&nbsp;Election&nbsp;-&nbsp;November&nbsp;6th</div>
+      <div class='dates'>Municipal Election Dates: Primary&nbsp;Election&nbsp;-&nbsp;September&nbsp;10th <span>|</span> General&nbsp;Election&nbsp;-&nbsp;November&nbsp;5th</div>
     </header>
 
     <%= if get_flash(@conn, :info) do %>
